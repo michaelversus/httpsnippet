@@ -9,5 +9,5 @@ module.exports = {
   },
 
   nsurlsession: require('./nsurlsession'),
-  custom: require('../../../../custom/custom_swift')
+  custom: require('../../../../../custom/custom_swift')
 }
