@@ -45,12 +45,12 @@ var HTTPSnippet = function (data) {
         throw err
       }
 
-      self.requests.push(self.prepare(entry.request))
+      self.requests.push(self.prepare(entry.request, entry.comment))
     })
   })
 }
 
-HTTPSnippet.prototype.prepare = function (request) {
+HTTPSnippet.prototype.prepare = function (request, comment) {
   // construct utility properties
   request.queryObj = {}
   request.headersObj = {}
@@ -58,6 +58,7 @@ HTTPSnippet.prototype.prepare = function (request) {
   request.allHeaders = {}
   request.postData.jsonObj = false
   request.postData.paramsObj = false
+  request.comment = comment;
 
   // construct query objects
   if (request.queryString && request.queryString.length) {
